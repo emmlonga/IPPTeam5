@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+
+    <title>Your App Name</title>
+
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.colors.css">
+    <!-- Path to your custom app styles-->
+    <!--        <link rel="stylesheet" href="../CSS/style.css"/>-->
+
+    <!-- embed jquery -->
+    <!--    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+
+    <!-- embed font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../V1_Prototype_LoFi/lib/Framework7-Icons-master/css/framework7-icons.css">
+    <!--Path to own CSS SHEET-->
+    <link rel="stylesheet" href="css/style-own2.css">
+
+</head>
+
+<!-- X when the body has loaded -->
+<!--<body onload="X()">-->
+
+<body>
+
+    <!--THIS IS THE STATUSBAR-->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed">
+                <div data-page="index" class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="left">
+                                <a href="#" class="link icon-only">
+                                    <i class="icon icon-back"></i>
+                                </a>
+                            </div>
+                            <div class="center">Course Review</div>
+                            <div class="right">
+                                <a href="../V1_Prototype_LoFi/courseSummary.html" class="link icon-only">
+                                    <i class="f7-icons">search</i>
+                                </a>
+                                <a href="#" class="link icon-only">
+                                    <i class="icon icon-bars"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="page-content background">
+
+                        <!-- Course Review OVERVIEW-->
+                        <div class="card courseOverview">
+                            <div class="card-header courseTitle">MW-12345: Arbeitswissenschaft</div>
+                            <div class="card-content">
+                                <div class="card-content-inner">
+                                    <div class="content-block">
+                                        <!-- Course Review Progress/RATE bar-->
+                                        <div class="row">
+                                            <div class="col-20">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">
+
+                                                                <div data-progress="80" class="progressbar color-green rotate">
+
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!-- Course Review Percentages-->
+                                            <div class="col-40">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">Would take again:
+                                                                <div class="item-title">87%</div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">Dropout Rate:
+                                                                <div class="item-title">12%</div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">Difficulty:
+                                                                <div class="item-title">3/5</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!-- Course Review TAGS-->
+                                            <div class="col-40">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">Exam:
+                                                                <div class="chip">
+                                                                    <div class="chip-media bg-blue"><i class="icon demo-icon-calendar">4</i></div>
+                                                                    <div class="chip-label">Medium </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">Pro:
+                                                                <div class="chip">
+                                                                    <div class="chip-media bg-green"><i class="icon demo-icon-calendar">5</i></div>
+                                                                    <div class="chip-label">Interesting</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">Con:
+                                                                <div class="chip">
+                                                                    <div class="chip-media bg-red"><i class="icon demo-icon-calendar">2</i></div>
+                                                                    <div class="chip-label">Workload</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Could be used to show information on how the stuff is being calculated for the user-->
+                                <div class="card-footer"> <a href="#" class="color-gray">More Information...</a></div>
+                            </div>
+                        </div>
+
+                        <!--Sort Option for RATING COMMENTS AND RATING DEVELOPMENT-->
+                        <div class="card">
+                            <div class="buttons-row">
+                                <a href="#tab1" class="button tab-link bg-blue color-white">Rating</a>
+                                <a href="#tab2" class="button tab-link">Rating Development</a>
+                                <a href="#tab3" class="button tab-link">Comments</a>
+                            </div>
+                        </div>
+
+                        <!--User Feedback-->
+                        <div class="card courseOverview">
+                            <div class="card-header"><a href="#" class="color-black">gij54a@mytum.de</a></div>
+                            <div class="card-content">
+                                <div class="card-content-inner">
+                                    <div class="content-block">
+                                        <!-- Course Review Progress/RATE bar-->
+                                        <div class="row">
+                                            <div class="col-20">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">
+                                                                <div data-progress="90" class="progressbar color-lightgreen rotateComment">
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- Course Review Comments-->
+                                            <div class="col-70">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <div class="item-content">
+                                                            <div class="item-input">
+                                                                <textarea>Attending this course, I really learned a lot. The lectures were well structured and the additional literature was highlighted very well. Combined with the lectures there was a tutorial available</textarea>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="item-content">
+                                                            <div class="col-90">
+                                                                <div class="chip listView">
+
+                                                                    <div class="chip-media bg-blue"><i class="f7-icons">book_fill</i></div>
+                                                                    <div class="chip-label"><a href="#" class="link color-black">Difficult</a></div>
+                                                                    <!--<a href="#" class="chip-delete"></a>-->
+
+                                                                </div>
+
+                                                                <div class="chip listView">
+                                                                    <div class="chip-media bg-green"><i class="f7-icons">add</i></div>
+                                                                    <div class="chip-label"><a href="#" class="link color-black">Eye-Opener</a></div>
+                                                                    <!--<a href="#" class="chip-delete"></a>-->
+                                                                </div>
+                                                                <div class="chip listView">
+
+
+                                                                    <div class="chip-media bg-red"><i class="f7-icons">delete</i></div>
+                                                                    <div class="chip-label"><a href="#" class="link color-black">Demanding</a></div>
+                                                                    <!--<a href="#" class="chip-delete"></a>-->
+
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!--Up/Downvote Area-->
+                                            <div class="col-10">
+                                                <p class="buttons-row">
+                                                    <a href="#" class="button button-raised color-green fa fa-chevron-up voting"></a>
+                                                </p>
+                                                <div class="list-block votingNumber">
+                                                    5
+                                                </div>
+                                                <p class="buttons-row">
+                                                    <a href="#" class="button button-raised  color-red fa fa-chevron-down voting"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Report Button-->
+                            <div class="card-footer"> <a href="#" class="color-gray">Report...</a></div>
+                        </div>
+
+                        <!--User Feedback II-->
+                        <div class="card courseOverview">
+                            <div class="card-header"><a href="#" class="color-black">gij54a@mytum.de</a></div>
+                            <div class="card-content">
+                                <div class="card-content-inner">
+                                    <div class="content-block">
+                                        <!-- Course Review Progress/RATE bar-->
+                                        <div class="row">
+                                            <div class="col-20">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">
+                                                                <div data-progress="70" class="progressbar color-lime rotateComment">
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- Course Review Comments-->
+                                            <div class="col-70">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <div class="item-content">
+                                                            <div class="item-input">
+                                                                <textarea class="">Attending this course, I really learned a lot. The lectures were well structured and the additional literature was highlighted very well. Combined with the lectures there was a tutorial available</textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-content">
+                                                            <div class="col-90">
+                                                                <div class="chip listView">
+
+                                                                    <div class="chip-media bg-blue"><i class="fa fa-check"></i></div>
+                                                                    <div class="chip-label"><a href="#" class="link color-black">Difficult</a></div>
+                                                                    <!--<a href="#" class="chip-delete"></a>-->
+
+                                                                </div>
+
+
+                                                                <div class="chip listView">
+
+
+                                                                    <div class="chip-media bg-red"><i class="fa fa-check"></i></div>
+                                                                    <div class="chip-label"><a href="#" class="link color-black">Demanding</a></div>
+                                                                    <!--<a href="#" class="chip-delete"></a>-->
+
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!--Up/Downvote Area-->
+                                            <div class="col-10">
+                                                <p class="buttons-row">
+                                                    <a href="#" class="button button-raised color-green fa fa-chevron-up voting"></a>
+                                                </p>
+                                                <div class="list-block votingNumber">
+                                                    2
+                                                </div>
+                                                <p class="buttons-row">
+                                                    <a href="#" class="button button-raised color-red fa fa-chevron-down voting"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Report Button-->
+                            <div class="card-footer"> <a href="#" class="color-gray">Report...</a></div>
+                        </div>
+
+                        <!--User Feedback III-->
+                        <div class="card courseOverview">
+                            <div class="card-header"><a href="#" class="color-black">gij54a@mytum.de</a></div>
+                            <div class="card-content">
+                                <div class="card-content-inner">
+                                    <div class="content-block">
+                                        <!-- Course Review Progress/RATE bar-->
+                                        <div class="row">
+                                            <div class="col-20">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">
+                                                                <div data-progress="100" class="progressbar color-green rotateComment">
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- Course Review Comments-->
+                                            <div class="col-70">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <div class="item-content">
+                                                            <div class="item-input">
+                                                                <textarea>Attending this course, I really learned a lot. The lectures were well structured and the additional literature was highlighted very well. Combined with the lectures there was a tutorial available</textarea>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="item-content">
+                                                            <div class="col-90">
+                                                                <div class="chip listView">
+
+                                                                    <div class="chip-media bg-blue"><i class="fa fa-check"></i></div>
+                                                                    <div class="chip-label"><a href="#" class="link color-black">Manageable</a></div>
+                                                                    <!--<a href="#" class="chip-delete"></a>-->
+
+                                                                </div>
+
+                                                                <div class="chip listView">
+                                                                    <div class="chip-media bg-green"><i class="fa fa-check"></i></div>
+                                                                    <div class="chip-label"><a href="#" class="link color-black">Interesting</a></div>
+                                                                    <!--<a href="#" class="chip-delete"></a>-->
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!--Up/Downvote Area-->
+                                            <div class="col-10">
+                                                <p class="buttons-row">
+                                                    <a href="#" class="button button-raised color-green fa fa-chevron-up voting"></a>
+                                                </p>
+                                                <div class="list-block votingNumber">
+                                                    3
+                                                </div>
+                                                <p class="buttons-row">
+                                                    <a href="#" class="button button-raised  color-red fa fa-chevron-down voting"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Report Button-->
+                            <div class="card-footer"> <a href="#" class="color-gray">Report...</a></div>
+                        </div>
+
+                        <!--User Feedback IV-->
+                        <div class="card courseOverview">
+                            <div class="card-header"><a href="#" class="color-black">gij54a@mytum.de</a></div>
+                            <div class="card-content">
+                                <div class="card-content-inner">
+                                    <div class="content-block">
+                                        <!-- Course Review Progress/RATE bar-->
+                                        <div class="row">
+                                            <div class="col-20">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <li class="item-content">
+                                                            <div class="item-inner">
+                                                                <div data-progress="60" class="progressbar color-amber rotateComment">
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- Course Review Comments-->
+                                            <div class="col-70">
+                                                <div class="list-block">
+                                                    <ul>
+                                                        <div class="item-content">
+                                                            <div class="item-input">
+                                                                <textarea>Attending this course, I really learned a lot. The lectures were well structured and the additional literature was highlighted very well. Combined with the lectures there was a tutorial available</textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-content">
+                                                            <div class="col-90">
+                                                                <div class="chip listView">
+                                                                    <div class="chip-media bg-red"><i class="fa fa-check"></i></div>
+                                                                    <div class="chip-label"><a href="#" class="link color-black">Demanding</a></div>
+                                                                    <!--<a href="#" class="chip-delete"></a>-->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!--Up/Downvote Area-->
+                                            <div class="col-10">
+                                                <p class="buttons-row">
+                                                    <a href="#" class="button button-raised  color-green fa fa-chevron-up voting"></a>
+                                                </p>
+                                                <div class="list-block votingNumber">
+                                                    -2
+                                                </div>
+                                                <p class="buttons-row">
+                                                    <a href="#" class="button button-raised  color-red fa fa-chevron-down voting"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Report Button-->
+                            <div class="card-footer"> <a href="#" class="color-gray">Report...</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="lib/Framework7-1.5.0/dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script src="js/script-own.js"></script>
+</body>
+
+</html>

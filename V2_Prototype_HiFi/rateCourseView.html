@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+    <title>Your App Name</title>
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <!--        <link rel="stylesheet" href="../CSS/style.css"/>-->
+    <link rel="stylesheet" href="../V1_Prototype_LoFi/lib/Framework7-Icons-master/css/framework7-icons.css">
+    <!-- embed jquery -->
+    <!--    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+    <!-- embed font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <!--Path to own CSS SHEET-->
+    <link rel="stylesheet" href="css/style-own.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="js/rating.js"></script>
+    <!--<script type="text/javascript" src="js/script-own-christoph.js"></script>-->
+</head>
+<!-- X when the body has loaded -->
+<!--<body onload="X()">-->
+
+<body>
+    <!--THIS IS THE STATUSBAR-->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed">
+                <div data-page="rateCourseView" class="page">
+                    <div class="navbar" style="background-color:#0D47A1">
+                        <div class="navbar-inner">
+                            <div class="left">
+                                <form target="_blank">
+                                    <a id="goToCourses" href="detailedCourseView.html" class="button" style="display:none"></a>
+                                </form>
+                                <p class="buttons-row">
+                                    <a onclick="leavePage()" href="#" class="link icon-only"> <i class="icon icon-back"></i> </a>
+                                </p>
+
+
+
+                            </div>
+                            <div class="center">Course Evaluation</div>
+                            <div class="right">
+                                <a href="#" class="link icon-only" onclick="createPopover()"> <i class="fa fa-ellipsis-v"></i> </a>
+                            </div>
+                        </div>
+                        <div data-progress="20" class="progressbar color-blue navProgress">
+                            <div data-progress="40" class="progressbar color-lightblue navProgress">
+                                <div data-progress="60" class="progressbar color-cyan navProgress">
+                                    <div data-progress="80" class="progressbar color-teal navProgress">
+                                        <div data-progress="100" class="progressbar color-green navProgress"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navCaption" style="left:80%"></div>
+                    </div>
+                    <div class="page-content">
+                        <!--RANGE SLIDER FOR OVERALL COURSE EXPERIENCE-->
+                        <div class="content-block-title color-black">Please rate the <strong>Quality</strong> of the course:</div>
+                        <div class="list-block">
+                            <ul>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="range-slider">
+                                                <div class="row no-gutter">
+                                                    <div class="col-7"><small>very bad</small></div>
+                                                    <div class="col-7"><small>bad</small></div>
+                                                    <div class="col-7"><small>average</small></div>
+                                                    <div class="col-7"><small>good</small></div>
+                                                    <div class="col-7"><small>very good</small></div>
+                                                </div>
+                                                <!--oninput="x.value=scaleRating(parseInt(a.value))" class="range-slider"onclick="myFunction(value)"-->
+                                                <form onchange="getQuality()">
+                                                    <input type="range" id="qualityRange" min="0" max="4" value="2" step="1">
+                                                    <!--<output name="x" for="a"></output>-->
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--RANGE SLIDER FOR OVERALL COURSE EXPERIENCE-->
+                            <div class="content-block-title color-black">Please rate the <strong>Difficulty</strong> of the course:</div>
+                            <ul>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="range-slider">
+                                                <div class="row no-gutter">
+                                                    <div class="col-7"><small>easy</small></div>
+                                                    <div class="col-7"><small>manageable</small></div>
+                                                    <div class="col-7"><small>medium</small></div>
+                                                    <div class="col-7"><small>difficult</small></div>
+                                                    <div class="col-7"><small>tough</small></div>
+                                                </div>
+                                                <form onchange="getDifficulty()">
+                                                    <input type="range" id="difficultyRange" min="0" max="4" value="2" step="1">
+                                                    <output name="x" for="a"></output>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--YES NO UNSURE BUTTONS-->
+                        <div class="content-block-title color-black"> What is your <strong>course's status</strong>?
+
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <p class="buttons-row"> <a href="#" class="button button-fill color-green" id="rateSuccess" onclick="buttonChange(0,1)">Finished</a>
+                                        <a href="#" class="button color-orange" id="rateEnrolled" onclick="buttonChange(1,1)">Enrolled</a>
+                                        <a href="#" class="button  color-red" id="rateDropped" onclick="buttonChange(2,1)">Dropped</a> </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="content-block-title color-black"> Would you take this lecture again?
+
+
+                            <p class="buttons-row"> <a href="#" class="button  button-fill color-green" id="rateYes" onclick="buttonChange(0,2)">Yes</a> <a href="#" class="button color-orange" id="rateUnsure" onclick="buttonChange(1,2)">Unsure</a> <a href="#" class="button color-red" id="rateNo" onclick="buttonChange(2,2)">No</a> </p>
+
+                        </div>
+                        <!--TAG ONE: EXAM EXPERIENCE-->
+                        <div class="content-block-title color-black">Please use up to 3 tags to describe
+                            <br>your experience with the <span class="color-blue">EXAM:</span> </div>
+                        <div id="exam" class="content-block">
+                            <div id="examTag"> </div>
+                            <div style="position:relative; height:15px;"></div>
+                            <div class="list-block">
+                                <ul>
+
+                                    <li>
+                                        <div class="item-content" style="border-top:1px solid rgba(0, 0, 0, 0.05)">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <input id="inputTag0" type="text" placeholder="+ Add Tag">
+
+                                                </div>
+
+                                            </div>
+                                            <p class="buttons-row">
+                                                <a href="#" id="tagButton0" class="button color-green fa fa-check tagButton" onclick="addTag(0)"></a>
+                                                <a href="#" class="button color-red fa fa-times tagButton" onclick="cancelTag(0)"></a>
+                                            </p>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--TAG TWO: GOOD LECTURE EXPRIENCES-->
+                        <div class="content-block-title color-black">Please use up to 3 tags to describe your
+                            <br><span class="color-green">POSITIVE</span> experience within the lecture:</div>
+                        <div id="positive" class="content-block">
+                            <div id="positiveTag"> </div>
+
+                            <div style="position:relative; height:15px;"></div>
+
+                            <div class="list-block">
+                                <ul>
+
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <input id="inputTag1" type="text" placeholder="+ Add Tag">
+
+                                                </div>
+                                            </div>
+                                            <p class="buttons-row">
+                                                <a href="#" id="tagButton1" class="button color-green fa fa-check tagButton" onclick="addTag(1)"></a>
+                                                <a href="#" class="button color-red fa fa-times tagButton" onclick="cancelTag(1)"></a>
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--TAG THREE: BAD LECTURE EXPRIENCES-->
+                        <div class="content-block-title color-black">Please use up to 3 tags to describe your
+                            <br><span class="color-red">NEGATIVE</span> experience within the lecture:</div>
+                        <div id="negative" class="content-block">
+                            <div id="negativeTag"> </div>
+                            <div style="position:relative; height:15px;"></div>
+
+                            <div class="list-block">
+                                <ul>
+
+                                    <li>
+                                        <div class="item-content" style="border-bottom:1px solid rgba(0, 0, 0, 0.05); ">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <input id="inputTag2" type="text" placeholder="+ Add Tag">
+
+                                                </div>
+                                            </div>
+                                            <p class="buttons-row">
+                                                <a href="#" id="tagButton2" class="button color-green fa fa-check tagButton" onclick="addTag(2)"></a>
+                                                <a href="#" class="button color-red fa fa-times tagButton" onclick="cancelTag(2)"></a>
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--COMMENT SECTION-->
+                        <div class="content-block-title color-black">Feel free to add additional feedback here:</div>
+                        <div class="list-block">
+                            <ul>
+                                <li class="align-top">
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <textarea id="rateComment" placeholder="Comment here..."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--SUBMIT BUTTON WITH POP UP WINDOW-->
+                        <div class="content-block-title">
+
+                            <form target="_blank">
+                                <a id="goToReview" href="courseReviewNew.html" class="button" style="display:none"></a>
+                            </form>
+                            <p class="buttons-row"> <a id="submit" onclick="submit()" href="#" class="button button-raised button-fill color-green confirm-ok-cancel">SUBMIT</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="lib/Framework7-1.5.0/dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script src="js/courses.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/script-own-christoph.js"></script>
+</body>
+
+</html>

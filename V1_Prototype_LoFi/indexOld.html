@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+    <title>Your App Name</title>
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <!--        <link rel="stylesheet" href="../CSS/style.css"/>-->
+    <!-- embed jquery -->
+    <!--    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+    <!-- embed font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <!--Path to own CSS SHEET-->
+    <link rel="stylesheet" href="css/style-own.css"> </head>
+<!-- X when the body has loaded -->
+<!--<body onload="X()">-->
+
+<body>
+    <!--THIS IS THE STATUSBAR-->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed">
+                <div data-page="index" class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="left">
+                                <a href="#" class="link icon-only"> <i class="icon icon-back"></i> </a>
+                            </div>
+                            <div class="center">Where am I?</div>
+                            <div class="right">
+                                <a href="#" class="link icon-only"> <i class="icon icon-bars"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <!-- PROGRESS BAR EXPLANATION-->
+                        <div class="content-block-title">Progress Bar Legend:</div>
+                        <div class="list-block">
+                            <ul>
+                                <li class="item-content">
+                                    <p>Successful:</p>
+                                    <div class="item-inner">
+                                        <div data-progress="5" class="progressbar color-blue"> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="item-content">
+                                    <p>Selected:</p>
+                                    <div class="item-inner">
+                                        <div data-progress="25" class="progressbar color-green"> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="item-content">
+                                    <p>Pending:</p>
+                                    <div class="item-inner">
+                                        <div data-progress="5" class="progressbar color-gray"> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--KEPT FOR PAGE LINK INFORMATION
+                        <div class="content-block-title">Welcome To Framework7
+                            <p>sddd</p>
+                        </div>
+                        <div class="content-block"><a href="html/about.html" class="button button-raised">About Framework7</a></div>
+-->
+                        <!--The cards are manipulated to be clickable everywhere, the link should be directed to the detailed course list-->
+                        <!--OBLIGATORY COURSE-->
+                        <a href="#" class="link">
+                            <div class="card demo-card-header-pic">
+                                <div style="background-image:url(http://img.talkandroid.com/uploads/2013/11/stack_of_books.jpg)" valign="top" class="card-header color-white no-border">Obligatory Courses</div>
+                                <div class="card-content">
+                                    <div class="card-content-inner">
+                                        <div class="list-block">
+                                            <ul>
+                                                <li class="item-content">
+                                                    <div class="item-inner">
+                                                        <div data-progress="20" class="progressbar color-blue">
+                                                            <div data-progress="40" class="progressbar color-green">
+                                                                <div data-progress="100" class="progressbar color-gray"> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="color-gray">Last changed on December 12, 2016</p>
+                                        <p class="color-black">Click on this card to see your obligatory courses...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <!--ELECTIVE COURSE-->
+                        <a href="#" class="link">
+                            <div class="card demo-card-header-pic">
+                                <div style="background-image:url(https://twistedsifter.files.wordpress.com/2015/04/nasa-earth-day-gallery-6.jpg)" valign="top" class="card-header color-white no-border">Elective Courses</div>
+                                <div class="card-content">
+                                    <div class="card-content-inner">
+                                        <div class="list-block">
+                                            <ul>
+                                                <li class="item-content">
+                                                    <div class="item-inner">
+                                                        <div data-progress="30" class="progressbar color-blue">
+                                                            <div data-progress="55" class="progressbar color-green">
+                                                                <div data-progress="100" class="progressbar color-gray"> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="color-gray">Last changed on November 17, 2016</p>
+                                        <p class="color-black">Click on this card to see your elective courses...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <!--PRACTICAL COURSE-->
+                        <a href="#" class="link">
+                            <div class="card demo-card-header-pic">
+                                <div style="background-image:url(http://rund-ums-fotografieren.ch/wp-content/uploads/2015/08/Luke-Tscharke.jpg)" valign="top" class="card-header color-white no-border">Practical Courses</div>
+                                <div class="card-content">
+                                    <div class="card-content-inner">
+                                        <div class="list-block">
+                                            <ul>
+                                                <li class="item-content">
+                                                    <div class="item-inner">
+                                                        <div data-progress="75" class="progressbar color-blue">
+                                                            <div data-progress="95" class="progressbar color-green">
+                                                                <div data-progress="100" class="progressbar color-gray"> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="color-gray">Last changed on September 4, 2016</p>
+                                        <p class="color-black">Click on this card to see your practical courses...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="lib/Framework7-1.5.0/dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script src="js/script-own.js"></script>
+</body>
+
+</html>

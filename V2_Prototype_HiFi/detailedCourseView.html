@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+
+    <title>Your App Name</title>
+
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.colors.css">
+    <!-- Path to your custom app styles-->
+    <!--        <link rel="stylesheet" href="../CSS/style.css"/>-->
+
+    <!-- embed jquery -->
+    <!--    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+
+    <!-- embed font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--Path to own CSS SHEET-->
+    <link rel="stylesheet" href="css/style-own.css">
+
+    <!--Framework 7 icons-->
+    <link rel="stylesheet" href="lib/Framework7-Icons-master/css/framework7-icons.css">
+
+    <!--Our javascript scritp-->
+    <script src="js/script-own.js"></script>
+    
+    <!-- Material IO icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!--Bootstrap script for the progressbar-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+</head>
+
+<!-- X when the body has loaded -->
+<!--<body onload="X()">-->
+
+<body>
+
+
+    <!--THIS IS THE STATUSBAR-->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed">
+                <div data-page="detailedCourseView" class="page">
+                    <div class="navbar" style="background-color:#1E88E5
+">
+                        <div class="navbar-inner">
+                            <div class="left">
+                                <a href="index.html" class="link icon-only">
+                                    <i class="icon icon-back"></i>
+                                </a>
+                            </div>
+                            <div class="center" id="pageTitle">Obligatory</div>
+                            <div class="right">
+                                <a href="#" class="link icon-only create-links" onclick="createPopover()">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div data-progress="20" class="progressbar color-blue navProgress">
+                        <div data-progress="40" class="progressbar color-lightblue navProgress" style="background-color:#1E88E5">
+                        <div data-progress="60" class="progressbar color-cyan navProgress">
+                        <div data-progress="80" class="progressbar color-teal navProgress">
+                        <div data-progress="100" class="progressbar color-green navProgress">
+                            </div></div></div></div></div>
+                        <div class="navCaption" style="left:20%"></div>
+
+                    </div>
+
+
+
+                    <div class="page-content" style="height: calc(100% - 40px);">
+
+
+                        <!--Progress Bar Update for User-->
+                        <div id="detailedBar" style="margin:12px 16px;">
+                        <div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width:40%;color:black;">
+      10
+    </div>
+    <div class="progress-bar progress-bar-info" role="progressbar" style="width:10%;color:black">
+      3
+    </div>
+    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:50%;background-color:transparent;color:black">
+      17
+                            </div></div>
+                        </div>
+                         
+
+
+                        <!-- Swipe list of courses-->
+                        <div class="list-block attending">
+                            <span class="courseType"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Attending</span>
+                            <ul id="attending">
+                                <li class="swipeout">
+                                    <div class="swipeout-content">
+                                        <a href="courseSummary.html" class="item-content item-link">
+                                            <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">MW4523</div>
+                                                        <div class="item-after">ECTS: 5</div>
+                                                    </div>
+                                                <div class="item-subtitle"><b>Arbeitswissenschaft</b></div>
+                                                <div class="item-text">More ...</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="rateCourseView.html" class="swipeout-overswipe bg-deeppurple">Rate</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-overswipe swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Delete?">Delete</a>
+                                        </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        
+                        <div class="list-block completed">
+
+                            <div><span class="courseType"><i class="fa fa-check-circle" aria-hidden="true"></i> Completed</span>
+
+                                <ul id="completed">
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a href="#" class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">MW3254</div>
+                                                        <div class="item-after">ECTS: 3</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Interaction Prototyping Course</b></div>
+                                                    <div class="item-text">
+                                                        <span>More ...</span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="rateCourseView.html" class="swipeout-overswipe bg-deeppurple"><i class="material-icons">insert_comment</i><span style="color:transparent">a</span>Rate</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-overswipe swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Delete?"><i class="material-icons">delete_forever</i></a>
+                                        </div>
+
+                                    </li>
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a href="#" class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">MW3254</div>
+                                                        <div class="item-after">ECTS: 3</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Informatics</b></div>
+                                                    <div class="item-text">
+                                                        More ...</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="rateCourseView.html" class="swipeout-overswipe bg-deeppurple">Rate</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-overswipe swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Delete?">Delete</a>
+                                        </div>
+
+                                    </li>
+
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a href="#" html class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">MW4523</div>
+                                                        <div class="item-after">ECTS: 5</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Ergonomics</b></div>
+                                                    <div class="item-text">More ...</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="rateCourseView.html" class="swipeout-overswipe bg-deeppurple">Rate</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-overswipe swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Delete?">Delete</a>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                                            <div class="footer">
+                            <p class="buttons-row" style="margin-bottom:0">
+                                <a href="listCourses.html" class="button button-raised button-fill color-blue no-animation" style="height:40px;line-height:40px;background-color:#A5D6A7">See Remaining Courses</a>
+                            </p>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="lib/Framework7-1.5.0/dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script src="js/script-own-emmanuel.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+    <title>Your App Name</title>
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.colors.css">
+    <!-- Path to your custom app styles-->
+    <!--        <link rel="stylesheet" href="../CSS/style.css"/>-->
+    <!-- embed jquery -->
+    <!--    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+    <!-- embed font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/Framework7-Icons-master/css/framework7-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Path to own CSS SHEET-->
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="css/style-own.css"> </head>
+<!-- X when the body has loaded -->
+<!--<body onload="X()">-->
+
+<body>
+    <!--THIS IS THE STATUSBAR-->
+    <div class="panel-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed">
+                <div data-page="courseReviewNew" class="page toolbar-fixed navbar-fixed">
+                    <div class="navbar" style="background-color:#1565C0">
+                        <div class="navbar-inner">
+                            <div class="left">
+                                <a href="detailedCourseView.html" class="link icon-only"> <i class="icon icon-back"></i> </a>
+                            </div>
+                            <div id="pageTitleReview" class="center"></div>
+                            <div class="right">
+                                <a href="#" class="link icon-only" onclick="createPopover()"> <i class="fa fa-ellipsis-v"></i> </a>
+                            </div>
+                        </div>
+                        <div data-progress="20" class="progressbar color-blue navProgress">
+                            <div data-progress="40" class="progressbar color-lightblue navProgress">
+                                <div data-progress="60" class="progressbar color-cyan navProgress">
+                                    <div data-progress="80" class="progressbar color-teal navProgress">
+                                        <div data-progress="100" class="progressbar color-green navProgress"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navCaption" style="left:80%"></div>
+                    </div>
+                    <!-- Additional "tabbar" class -->
+                    <div class="toolbar tabbar" style="background-color:#1565C0">
+                        <div class="toolbar-inner">
+                            <!-- <a href="#tab1" class="tab-link active"><small>Overview</small><i class="fa fa-line-chart tab-icons"></i></a>
+                            <a href="#tab2" class="tab-link"><small>Comments</small><i class="fa fa-comments tab-icons"></a>
+                            <a href="#tab3" class="tab-link"><small>Statistics</small><i class="fa fa-line-chart tab-icons"></a>
+--><a href="#tab-1" class="tab-link active"><small>Overview</small><i class="material-icons  tab-icons">description</i></a> <a href="#tab-2" class="tab-link"><small>Comments</small><i class="material-icons tab-icons">feedback</i></a> <a href="#tab-3" class="tab-link"><small>Statistics</small><i class="material-icons tab-icons">insert_chart</i></a> </div>
+                    </div>
+                    <div id="speedDial" class="speed-dial"> </div>
+                    <!-- End of Speed Dial 
+                    <a href="#" class="floating-button floating-button-to-popover open-popover color-purple">
+                        <i class="icon icon-plus"></i>
+                    </a> -->
+                    <div class="page-content">
+                        <div class="tabs">
+                            <!-- Tab 1, active by default -->
+                            <div id="tab-1" class="tab active">
+                                <div class="content-block">
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner"><strong>Registration Status:</strong>
+                                                        <div id="courseSituationII" class="item-title"><span id="courseSituation"></span></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="content-block-title distance-to-top color-black"><strong>Course Description:</strong> </div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <div class="item-content">
+                                                <div class="item-input">
+                                                    <textarea id="courseDescriptionOverview" class="font-size courseDescription"></textarea>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div class="content-block-title distance-to-top color-black"><strong>General Information:</strong> </div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">Timeframe:
+                                                        <div class="item-title"><span id="courseTime"></span></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">Room Information:
+                                                        <div class="item-title"><span id="courseRoom"></span></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">ECTS:
+                                                        <div class="item-title"><span id="courseECTS"></span></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">Term:
+                                                        <div class="item-title"><span id="courseTerm"></span></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">Language:
+                                                        <div class="item-title"><span id="courseLanguage"></span></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">Exam:
+                                                        <div class="item-title"><span id="courseTest"></span></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">Lecturer:
+                                                        <div class="item-title"><span id="courseLecturer"></span></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="content-block-title distance-to-top color-black"><strong>Rating Information:</strong> </div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li class="item-content">
+                                                <div id="courseQuality" class="item-inner"><span class="distance-right">Quality: </span>
+                                                    <div data-progress="0" class="progressbar color-green"></div>
+                                                </div>
+                                                <div id="courseQualityPercentage" class="quality">N/A</div>
+                                            </li>
+                                            <li class="item-content">
+                                                <div class="item-inner">Difficulty of the course:
+                                                    <div class="item-title"><span id="courseDifficultyName">N/A</span><span id="courseDifficultyNumber"></span></div>
+                                                </div>
+                                            </li>
+                                            <li class="item-content">
+                                                <div class="item-inner">Would take the course again:
+                                                    <div id="courseRecommendation" class="item-title">N/A<span></span></div>
+                                                </div>
+                                            </li>
+                                            <li class="item-content">
+                                                <div class="item-inner">Dropout Rate:
+                                                    <div class="item-title" id="courseStatusNum">N/A<span></span></div>
+                                                </div>
+                                            </li>
+                                            <li class="item-content">
+                                                <div class="item-inner">Amount of Votes:
+                                                    <div class="item-title" id="courseVotes">N/A<span></span></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="content-block-title distance-to-top color-black"><strong>Top Tags:</strong></div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li class="item-content">
+                                                <div class="item-media"><i class="fa fa-book tab-icons"></i></div>
+                                                <div class="item-inner">Exam:
+                                                    <div class="item-title">
+                                                        <div class="chip listView">
+                                                            <div id="examHigh1" class="chip-media bg-blue"></div>
+                                                            <div class="chip-label"> <a href="#" id="examHigh2" class="link color-black">N/A</a> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item-content">
+                                                <div class="item-media"><i class="fa fa-plus tab-icons"></i></div>
+                                                <div class="item-inner">Pro:
+                                                    <div class="item-title">
+                                                        <div class="chip listView">
+                                                            <div id="positiveHigh1" class="chip-media bg-green"></div>
+                                                            <div class="chip-label"><a href="#" id="positiveHigh2" class="link color-black">N/A</a></div>
+                                                            <!--<a href="#" class="chip-delete"></a>--></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item-content">
+                                                <div class="item-media"><i class="fa fa-minus tab-icons"></i></div>
+                                                <div class="item-inner">Con:
+                                                    <div class="item-title">
+                                                        <div class="chip listView">
+                                                            <div id="negativeHigh1" class="chip-media bg-red"></div>
+                                                            <div class="chip-label"><a href="#" id="negativeHigh2" class="link color-black">N/A</a></div>
+                                                            <!--<a href="#" class="chip-delete"></a>--></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tab 2 -->
+                            <div id="tab-2" class="tab">
+                                <div class="content-block">
+                                    <div id="userFeedback">
+                                        <!-- <div class="content-block-title distance-to-top"></div>-->
+                                        <!--<div class="card courseOverview">
+                                            <div class="card-header"><a href="#" class="color-black">user123</a>
+                                                <div>rated: 80%</div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-content-inner">
+                                                    <div class="content-block">
+                                                        <!-- Course Review Progress/RATE bar-->
+                                        <!-- Course Review Comments
+                                                        <div class="row no-gutter">
+                                                            <div class="col-90 ">
+                                                                <div class="list-block">
+                                                                    <ul>
+                                                                        <div class="item-content">
+                                                                            <div class="item-input writtenFeedback">
+                                                                                <textarea class="font-size">Attending this course, I really learned a lot. The lectures were well structured and the additional literature was highlighted very well. Combined with the lectures there was a tutorial available</textarea>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <!--Up/Downvote Area
+                                                            <div class="col-5">
+                                                                <div class="upDownVote1">
+                                                                    <p id="up1" class="buttons-row voting up" onclick="voteUp(1)">
+                                                                        <a href="#" class="button button-raised color-green fa fa-chevron-up  voting-up"></a>
+                                                                    </p>
+
+                                                                    <p id="down1" class="buttons-row voting" onclick="voteDown(1)">
+                                                                        <a href="#" class="button button-raised color-red fa fa-chevron-down voting-down"></a>
+                                                                    </p>
+                                                                    <p id="voteNumber1" class="buttons-row number-margin count">0</p>
+                                                                </div>
+                                                            </div>
+                                                            <!--<div class="col-15"> </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="commentPadding">
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-blue"><i class="fa fa-book"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Difficult</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-green"><i class="fa fa-plus"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Useful</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-red"><i class="fa fa-minus"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Demanding</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                </div>
+                                            </div>
+                                            <!--Report Button
+                                            <div class="card-footer"> <a href="#" class="color-gray">Report...</a>21.11.2016</div>
+                                        </div>
+
+                                        <div class="card courseOverview">
+                                            <div class="card-header"><a href="#" class="color-black">anonymous22</a>
+                                                <div>rated: 80%</div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-content-inner">
+                                                    <div class="content-block">
+                                                        <!-- Course Review Progress/RATE bar-->
+                                        <!-- Course Review Comments
+                                                        <div class="row no-gutter">
+                                                            <div class="col-90 ">
+                                                                <div class="list-block">
+                                                                    <ul>
+                                                                        <div class="item-content">
+                                                                            <div class="item-input writtenFeedback">
+                                                                                <textarea class="font-size">Attending this course, I really learned a lot. The lectures were well structured and the additional literature was highlighted very well. Combined with the lectures there was a tutorial available</textarea>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <!--Up/Downvote Area
+                                                            <div class="col-5">
+                                                                <div class="upDownVote">
+                                                                    <p class="buttons-row voting up">
+                                                                        <a href="#" class="button button-raised color-green fa fa-chevron-up  voting-up"></a>
+                                                                    </p>
+
+                                                                    <p class="buttons-row voting">
+                                                                        <a href="#" class="button button-raised color-red fa fa-chevron-down voting-down"></a>
+                                                                    </p>
+                                                                    <p class="buttons-row number-margin count">0</p>
+                                                                </div>
+                                                            </div>
+                                                            <!--<div class="col-15"> </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="commentPadding">
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-blue"><i class="fa fa-book"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Difficult</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-green"><i class="fa fa-plus"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Useful</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-red"><i class="fa fa-minus"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Demanding</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                </div>
+                                            </div>
+                                            <!--Report Button
+                                            <div class="card-footer"> <a href="#" class="color-gray">Report...</a>21.11.2016</div>
+                                        </div>
+
+
+                                        <div class="card courseOverview">
+                                            <div class="card-header"><a href="#" class="color-black">noIdeaForUsernameYet</a>
+                                                <div>rated: 80%</div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-content-inner">
+                                                    <div class="content-block">
+                                                        <!-- Course Review Progress/RATE bar-->
+                                        <!-- Course Review Comments
+                                                        <div class="row no-gutter">
+                                                            <div class="col-90 ">
+                                                                <div class="list-block">
+                                                                    <ul>
+                                                                        <div class="item-content">
+                                                                            <div class="item-input writtenFeedback">
+                                                                                <textarea class="font-size">Attending this course, I really learned a lot. The lectures were well structured and the additional literature was highlighted very well. Combined with the lectures there was a tutorial available</textarea>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <!--Up/Downvote Area
+                                                            <div class="col-5">
+                                                                <div class="upDownVote">
+                                                                    <p class="buttons-row voting up">
+                                                                        <a href="#" class="button button-raised color-green fa fa-chevron-up  voting-up"></a>
+                                                                    </p>
+
+                                                                    <p class="buttons-row voting">
+                                                                        <a href="#" class="button button-raised color-red fa fa-chevron-down voting-down"></a>
+                                                                    </p>
+                                                                    <p class="buttons-row number-margin count">0</p>
+                                                                </div>
+                                                            </div>
+                                                            <!--<div class="col-15"> </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="commentPadding">
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-blue"><i class="fa fa-book"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Difficult</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-green"><i class="fa fa-plus"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Useful</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-red"><i class="fa fa-minus"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Demanding</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                </div>
+                                            </div>
+                                            <!--Report Button
+                                            <div class="card-footer"> <a href="#" class="color-gray">Report...</a>21.11.2016</div>
+                                        </div>
+                                        <div class="card courseOverview">
+                                            <div class="card-header"><a href="#" class="color-black">stillNoIdea</a>
+                                                <div>rated: 80%</div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-content-inner">
+                                                    <div class="content-block">
+                                                        <!-- Course Review Progress/RATE bar-->
+                                        <!-- Course Review Comments
+                                                        <div class="row no-gutter">
+                                                            <div class="col-90 ">
+                                                                <div class="list-block">
+                                                                    <ul>
+                                                                        <div class="item-content">
+                                                                            <div class="item-input writtenFeedback">
+                                                                                <textarea class="font-size">Attending this course, I really learned a lot. The lectures were well structured and the additional literature was highlighted very well. Combined with the lectures there was a tutorial available</textarea>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <!--Up/Downvote Area
+                                                            <div class="col-5">
+                                                                <div class="upDownVote">
+                                                                    <p class="buttons-row voting up">
+                                                                        <a href="#" class="button button-raised color-green fa fa-chevron-up  voting-up"></a>
+                                                                    </p>
+
+                                                                    <p class="buttons-row voting">
+                                                                        <a href="#" class="button button-raised color-red fa fa-chevron-down voting-down"></a>
+                                                                    </p>
+                                                                    <p class="buttons-row number-margin count">0</p>
+                                                                </div>
+                                                            </div>
+                                                            <!--<div class="col-15"> </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="commentPadding">
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-blue"><i class="fa fa-book"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Difficult</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-green"><i class="fa fa-plus"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Useful</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                    <div class="chip listView">
+                                                        <div class="chip-media bg-red"><i class="fa fa-minus"></i></div>
+                                                        <div class="chip-label"><a href="#" class="link color-black">Demanding</a></div>
+                                                        <!--<a href="#" class="chip-delete"></a></div>
+                                                </div>
+                                            </div>
+                                            <!--Report Button
+                                            <div class="card-footer"> <a href="#" class="color-gray">Report...</a>21.11.2016</div>
+                                        </div>
+                                        <!--For JS-->
+                                        <!--HERE ENDS JS TEMPLATE-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tab 3 -->
+                            <div id="tab-3" class="tab page-content">
+                                <div class="content-block"> ... Tab 3 content ... </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--HERE WITH NEXT PAGE-->
+                    <!--REBECCA
+                    <div class="popover demo-popover">
+                        <div class="popover-inner">
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="item-content item-link">
+                                            <div class="item-inner">
+                                                <div class="item-title">Link 1</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="item-content item-link">
+                                            <div class="item-inner">
+                                                <div class="item-title">Link 2</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="item-content item-link">
+                                            <div class="item-inner">
+                                                <div class="item-title">Link 3</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> --></div>
+            </div>
+        </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="lib/Framework7-1.5.0/dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script src="js/courses.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/script-own-christoph.js"></script>
+</body>
+
+</html>

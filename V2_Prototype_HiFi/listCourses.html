@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+
+    <title>Your App Name</title>
+
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.colors.css">
+    <!-- Path to your custom app styles-->
+    <!--        <link rel="stylesheet" href="../CSS/style.css"/>-->
+
+    <!-- embed jquery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- embed font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--Path to own CSS SHEET-->
+    <link rel="stylesheet" href="css/style-own.css">
+    
+    <!-- CSS FLAGS-->
+    <link rel="stylesheet" href="lib/flag-icon-css-master/css/flag-icon.css">
+
+    <!--Framework 7 icons-->
+    <link rel="stylesheet" href="lib/Framework7-Icons-master/css/framework7-icons.css">
+    
+    <!-- Material IO icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    
+</head>
+
+<!-- X when the body has loaded -->
+<!--<body onload="X()">-->
+
+<body>
+    
+
+    <!--THIS IS THE STATUSBAR-->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed">
+                <div data-page="listCourses" class="page">
+                    <div class="navbar" style="background-color:#1976D2">
+                        <div class="navbar-inner">
+                            <div class="left">
+                                <a href="detailedCourseView.html" class="link icon-only" id="backGeneral">
+                                    <i class="icon icon-back"></i>
+                                </a>
+                            </div>
+                            <div class="center">Remaining List</div>
+                            <div class="right">
+                                <a href="#" class="link icon-only" onclick="createPopover()">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div data-progress="20" class="progressbar color-blue navProgress">
+                        <div data-progress="40" class="progressbar color-lightblue navProgress">
+                        <div data-progress="60" class="progressbar color-cyan navProgress">
+                        <div data-progress="80" class="progressbar color-teal navProgress">
+                        <div data-progress="100" class="progressbar color-green navProgress">
+                            </div></div></div></div></div>
+                        <div class="navCaption" style="left:40%"></div>
+                    </div>
+                    
+
+                    <!-- Search Bar -->
+                      <form data-search-list=".list-block-search" data-search-in=".item-inner" class="searchbar searchbar-init" style="background-color:#1976D2">
+                        <div class="searchbar-input">
+                          <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
+                        </div>
+                        <a href="#" data-picker=".picker-1" class="open-picker link icon-only">
+                            <i class="icon fa fa-filter" aria-hidden="true"></i>
+                                </a>
+                        <a href="#" data-picker=".picker-2" class="open-picker link icon-only">
+                            <i class="icon fa fa-sort" aria-hidden="true"></i>
+                                </a>
+                      </form>
+                                        
+                    
+
+                      <!-- Search Bar overlay 
+                      <div class="searchbar-overlay"></div>-->
+
+                      <div class="page-content">
+                        <!-- This block will be displayed if nothing found -->
+                        <div class="content-block searchbar-not-found">
+                          <div class="content-block-inner">Nothing found</div>
+                        </div>
+
+                        <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+                        <div class="list-block list-block-search searchbar-found">
+                            <ul id="courseList">
+
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a href="#" class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">MW3254</div>
+                                                        <div class="item-after">ECTS:3</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Informatics</b></div>
+                                                    <div class="item-text">
+                                                        <span class="flag-icon flag-icon-gb"></span>
+                                                        <span>4.3</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="#" class="swipeout-overswipe swipeout-favorite bg-indigo forward">Read Reviews</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-delete swipeout-overswipe" data-confirm="Are you sure want to hide this item?" data-confirm-title="Hide?"><i class="material-icons">visibility_off</i></a>
+                                        </div>
+
+                                    </li>
+                                
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a href="#" class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">MW3254</div>
+                                                        <div class="item-after">ECTS: 3</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Software Ergonomy</b></div>
+                                                    <div class="item-text">
+                                                        <span class="flag-icon flag-icon-gb"></span>
+                                                        <span>4.3</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="#" class="swipeout bg-indigo reply">Rate</a>
+                                            <a href="#" class="swipeout bg-green reply">Favorite</a>
+                                            <a href="#" class="swipeout-overswipe bg-gray forward">Open</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Hide?">Hide</a>
+                                        </div>
+
+                                    </li>
+                                
+                                
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a href="#" class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">MW0612</div>
+                                                        <div class="item-after">ECTS: 5</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Finite Elements</b></div>
+                                                    <div class="item-text">
+                                                        <span class="flag-icon flag-icon-de"></span>
+                                                        <span>4.1</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="#" class="swipeout bg-indigo reply">Rate</a>
+                                            <a href="#" class="swipeout bg-green reply">Favorite</a>
+                                            <a href="#" class="swipeout-overswipe bg-gray forward">Open</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Hide?">Hide</a>
+                                        </div>
+
+                                    </li>
+                                
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a href="#" class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">MW2098</div>
+                                                        <div class="item-after">ECTS: 5</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Engineering Dynamics</b></div>
+                                                    <div class="item-text">
+                                                        <span class="flag-icon flag-icon-de"></span>
+                                                        <span>3.7</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="#" class="swipeout bg-indigo reply">Rate</a>
+                                            <a href="#" class="swipeout bg-green reply">Favorite</a>
+                                            <a href="#" class="swipeout-overswipe bg-gray forward">Open</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Hide?">Hide</a>
+                                        </div>
+
+                                    </li>
+                                
+                                                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a href="#" class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">MW0612</div>
+                                                        <div class="item-after">ECTS: 5</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Quality Management</b></div>
+                                                    <div class="item-text">
+                                                        <span class="flag-icon flag-icon-de"></span>
+                                                        <span>3.5</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="#" class="swipeout bg-indigo reply">Rate</a>
+                                            <a href="#" class="swipeout bg-green reply">Favorite</a>
+                                            <a href="#" class="swipeout-overswipe bg-gray forward">Open</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Hide?">Hide</a>
+                                        </div>
+                                                                        
+                                    </li>
+                                
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a href="#" class="item-content item-link">
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">ME0012</div>
+                                                        <div class="item-after">ECTS: 5</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Equipment Design</b></div>
+                                                    <div class="item-text">
+                                                        <span class="flag-icon flag-icon-de"></span>
+                                                        <span>2.7</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="#" class="swipeout bg-indigo reply">Rate</a>
+                                            <a href="#" class="swipeout bg-green reply">Favorite</a>
+                                            <a href="#" class="swipeout-overswipe bg-gray forward">Open</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Hide?">Hide</a>
+                                        </div>
+
+                                    </li>
+                                
+                                
+                                </ul>
+                        </div>
+                      </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+  
+
+    <!-- Filter -->
+  <div class="picker-modal picker-1 bg-gray">
+    <div class="toolbar">
+      <div class="toolbar-inner">
+        <div class="left"><span>Filter</span></div>
+        <div class="right"><a href="#" class="close-picker color-brown">Done</a></div>
+      </div>
+    </div>
+    <div class="picker-modal-inner">
+<div class="list-block">
+  <ul>
+    <!-- Text inputs -->
+      
+            <li><a href="#" class="item-link smart-select" data-open-in="picker" data-picker-height="400px">
+        <!-- "multiple" attribute for multiple select-->
+        <select name="Tag" multiple>
+          <!-- options grouped within "optgroup" tag-->
+          <optgroup label="Test">
+            <option value="tag1" selected>Tag1</option>
+          </optgroup>
+          <optgroup label="Pros">
+            <option value="tag2" selected>Tag2</option>
+          </optgroup>
+          <optgroup label="Cons">
+            <option value="tag3">Tag3</option>
+          </optgroup>
+        </select>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-title">Tags</div>
+          </div>
+        </div></a></li>
+      
+            <li><a href="#" class="item-link smart-select" data-open-in="picker" data-picker-height="400px">
+        <!-- "multiple" attribute for multiple select-->
+        <select name="Tag" multiple>
+          <!-- options grouped within "optgroup" tag-->
+            <option value="tag1" selected>Tag1</option>
+        </select>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-title">Department</div>
+          </div>
+        </div></a></li>
+
+    <!-- Select -->
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Language</div>
+          <div class="item-input">
+            <select>
+              <option>All</option>
+              <option>English</option>
+              <option>German</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </li>
+      
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">ECTS</div>
+          <div class="item-input">
+            <select>
+              <option>Greater than</option>
+              <option>Equal to</option>
+            </select>
+          </div>
+          <div class="item-input">
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              <option>6</option>
+            </select>
+          </div>
+          </div>
+        </div>
+    </li>
+      
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Rating</div>
+            <div class="label">Greater than</div>
+          <div class="item-input">
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              <option>6</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </li>
+ 
+  </ul>
+</div>
+    </div>
+  </div>
+    
+    <!-- Sort -->
+  <div class="picker-modal picker-2 bg-gray">
+    <div class="toolbar">
+      <div class="toolbar-inner">
+        <div class="left"><span>Sort</span></div>
+        <div class="right"><a href="#" class="close-picker color-brown">Done</a></div>
+      </div>
+    </div>
+    <div class="picker-modal-inner">
+        <div class="list-block">
+  <ul>
+    <!-- Single radio input -->
+    <li>
+      <label class="label-radio item-content">
+        <!-- Checked by default -->
+        <input type="radio" name="my-radio" value="Alphabetical" checked="checked">
+        <div class="item-media">
+          <i class="icon icon-form-radio"></i>
+        </div>
+        <div class="item-inner">
+          <div class="item-title">Alphabetical</div>
+        </div>
+      </label>
+    </li>
+    <!-- Another radio input -->
+    <li>
+      <label class="label-radio item-content">
+        <input type="radio" name="my-radio" value="Movies">
+        <div class="item-media">
+          <i class="icon icon-form-radio"></i>
+        </div>
+        <div class="item-inner">
+          <div class="item-title">ECTS, Language, Rating, Popularity</div>
+        </div>
+      </label>
+    </li>
+    
+  </ul>
+</div>   
+    </div>
+  </div>
+    
+    
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="lib/Framework7-1.5.0/dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script src="js/script-own-emmanuel.js"></script>
+</body>
+
+</html>

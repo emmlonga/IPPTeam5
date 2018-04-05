@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+
+    <title>Your App Name</title>
+
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.colors.css">
+    <!-- Path to your custom app styles-->
+    <!--        <link rel="stylesheet" href="../CSS/style.css"/>-->
+
+    <!-- embed jquery -->
+    <!--    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+
+    <!-- embed font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/Framework7-Icons-master/css/framework7-icons.css">
+    <!--Path to own CSS SHEET-->
+    <link rel="stylesheet" href="css/style-own2.css">
+
+</head>
+
+<!-- X when the body has loaded -->
+<!--<body onload="X()">-->
+
+<body>
+
+    <!--THIS IS THE STATUSBAR-->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed">
+                <div data-page="courseSummary" class="page">
+                    <div class="navbar" style="background-color:#1565C0">
+                        <div class="navbar-inner">
+                            <div class="left">
+                                <a href="detailedCourseView.html" class="link icon-only">
+                                    <i class="icon icon-back"></i>
+                                </a>
+                            </div>
+                            <div class="center">Course Options</div>
+                            <div class="right">
+                                <a href="#" class="link icon-only">
+                                    <i class="f7-icons">search</i>
+                                </a>
+                                <a href="#" class="link icon-only">
+                                    <i class="icon icon-bars"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div data-progress="20" class="progressbar color-blue navProgress">
+                        <div data-progress="40" class="progressbar color-lightblue navProgress" style="background-color:#1E88E5">
+                        <div data-progress="60" class="progressbar color-cyan navProgress">
+                        <div data-progress="80" class="progressbar color-teal navProgress">
+                        <div data-progress="100" class="progressbar color-green navProgress">
+                            </div></div></div></div></div>
+                        <div class="navCaption" style="left:60%"></div>
+                    </div>
+
+
+                    <div class="page-content">
+                        <!-- Course Review OVERVIEW-->
+                        <div class="content-block-title" id="summaryTitle">Arbeitswissenschaft</div>
+                        <div class="list-block">
+                            <ul>
+                                <li>
+                                    <a href="#" class="item-content color-black">
+
+                                        <div class="item-inner">
+                                            <div class="item-title">Course Description</div>
+
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="courseReviewNew.html" class="item-content color-black">
+
+                                        <div class="item-inner">
+                                            <div class="item-title">Course Reviews</div>
+
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="rateCourseView.html" class="item-content color-black">
+
+                                        <div class="item-inner">
+                                            <div class="item-title">Review Course</div>
+
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item-content color-black">
+
+                                        <div class="item-inner">
+                                            <div class="item-title">Course Sign-out</div>
+
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="lib/Framework7-1.5.0/dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script src="js/script-own.js"></script>
+</body>
+
+</html>

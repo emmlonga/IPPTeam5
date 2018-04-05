@@ -1,0 +1,264 @@
+.demo-card-header-pic .card-header {
+    height: 16vw;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.card-content{
+}
+.card-content-inner{
+    height: 1vw;
+    position: relative;
+}
+
+.card-content-inner p{
+    font-size: 3vw;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(70%);   
+}
+
+.chip {
+    height: 25px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+.courseOverview {
+    position: fixed;
+    right: 0px
+}
+
+.progressBar {}
+
+.card {
+    background-color: #303F9F;
+    text-align: center;
+}
+
+.card-header {
+    text-align: center;
+    font-size: 8vw;
+    justify-content: center;
+}
+
+.withImage {
+    background-image: url(http://rund-ums-fotografieren.ch/wp-content/uploads/2015/08/Luke-Tscharke.jpg)
+}
+
+.itemInner {
+    margin: 0vw 1vw 6vw 1vw;
+}
+
+.content-block-title {
+    text-align: center;
+    font-size: 3.8vw;
+    padding: 0px;
+    height: 4.3vw;
+    line-height: 4.3vw;
+}
+
+div p {
+    font-size: 3vw;
+}
+
+.swipeout-content {
+    background: linear-gradient(to right, rgba(248, 80, 50, 1) 0%, rgba(255, 255, 255, 0.98) 1%, rgba(255, 255, 255, 0.98) 50%, rgba(255, 255, 255, 0.98) 99%, rgba(63, 81, 181, 1) 100%);
+}
+
+.swipeout {}
+
+.fa-line-chart {
+    color: black;
+    font-size: 3vw;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    line-height: 72px;
+    background-color: #0D47A1;
+    width: 100%;
+    height: 72px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.courseType {
+    text-transform: uppercase;
+    margin: 6px;
+    font-size: 5vw;
+}
+
+.completed{
+    color: #2E7D32;
+}
+
+.attending{
+    color: #4CAF50;
+}
+
+#progressTop{
+    margin: 0px;
+}
+
+#progressTop ul:after{
+    background-color: white;
+}
+
+
+.list-block{
+    margin: 0px auto 16px auto;
+}
+
+#progressTop2{
+    height: 9px;
+}
+
+.item-text{
+    color: red;
+}
+
+.item-subtitle{
+    justify-content: space-around;
+}
+
+form i {
+    margin-left: 10px;
+    padding: 10px 15px;
+}
+
+.toolbar-inner{
+    padding: 0px 10px;
+}
+
+.toolbar-inner span{
+    font-size: 15px;
+}
+
+span.item-text{
+    font-size: 10px;
+}
+
+.caption{
+    position: relative;
+    bottom: 0px;
+    margin: 0px 1vw;
+}
+
+.progress-bar{
+    color: black;
+}
+
+.position{
+    color:rgb(33, 33, 33);
+    height: 100%;
+    position: absolute;
+    top: 0px;   
+    left: 50%;
+    width: 50%;
+    display: flex;
+    
+}
+
+.position i{
+    vertical-align: middle;
+    font-size: 26px;
+    margin: 0px 3px;
+    padding: 0px;
+}
+
+//*PROGRESS BAR**/
+
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.progress {
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #337ab7;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+}
+.progress-striped .progress-bar,
+.progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.progress.active .progress-bar,
+.progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+.progress-bar-success {
+  background-color: #5cb85c;
+}
+.progress-striped .progress-bar-success {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress-bar-info {
+  background-color: #5bc0de;
+}
+.progress-striped .progress-bar-info {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress-bar-warning {
+  background-color: #f0ad4e;
+}
+.progress-striped .progress-bar-warning {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress-bar-danger {
+  background-color: #d9534f;
+}
+.progress-striped .progress-bar-danger {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
